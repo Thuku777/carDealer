@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+	<div class="cs-subheader center" style="background:url({% static 'assets/extra-images/bg-subheader.jpg' %}); no-repeat 0 0 /cover; min-height:296px; padding:90px 0 0; margin-bottom:70px;">
+		<div class="container">
+			<div class="cs-page-title">
+				<h1 style="color:#fff !important;">About US</h1>
+				<p style="color:#fff;">If you think we might be a good fit for a project you’re working on and you’d like to get the feel of how we<br />
+					can work together please contact us using contact data.</p>
+			</div>
+		</div>
+	</div>
+	<!-- Main Start -->
+	<div class="main-section">
+		
+		<!-- Banner -->
+		{% include 'partials/about/_banner.html' %}
+		
+		<!-- Our Team -->
+		{% include 'partials/about/_team.html' %}
+
+		<!-- Count -->
+		{% include 'partials/about/_count.html' %}
+
+		<div class="page-section" style="margin-bottom:70px;">
+			<div class="container">
+				<div class="row">
+
+				<!-- Advantages -->
+				{% include 'partials/about/_advantages.html' %}
+
+				<!-- Testimonials -->
+				{% include 'partials/about/_testimonials.html' %}
+
+				</div>
+			</div>
+		</div>
+		
+		<!-- Gallery -->
+		{% include 'partials/about/_gallery.html' %}
+	</div>
+	<!-- Main End --> 
+	
+{% endblock %}

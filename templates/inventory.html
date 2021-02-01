@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container"> 
+    <h3><strong>Our Inventory</strong></h3>
+</div>
+
+<div class="row">
+    {% for car in inventory_cars %}
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="auto-listing auto-grid">
+            <div class="cs-media">
+                <figure> <img src="{{ car.image_main.url }}" alt="#"/>
+                </figure>
+            </div>
+            <div class="auto-text"> <span class="cs-categories"><a href="#">{{ car.category }}</a></span>
+                <div class="post-title">
+                    <h6><a href="{{car.get_absolute_url}}">{{car.brand}}</a></h6>
+                    <div class="auto-price"><span class="cs-color">Price: ${{ car.price }}</span></div>
+                </div>
+
+                <!-- <div class="btn-list"> <a href="javascript:void(0)" class="btn btn-danger collapsed" data-toggle="collapse" data-target="#list-view"></a> 
+                    <div id="list-view" class="collapse">
+                        <ul>
+                            <li>Mileage: {{car.miles}}</li>
+                            <li>Transmission: {{car.transmission}}</li>
+                            <li>Brand Year: {{car.year}}</li>
+                            <li>Break Horsepower: {{car.power}} hp</li>
+                            <li>Fuel Tank: {{car.fuel_tank}} Litres</li>
+                        </ul>
+                    </div>
+                </div>-->
+                <div class="cs-checkbox">
+                    <div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:15px"> {{car.transmission}} </i> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;<i>Year: {{car.year}}</i>
+                    </div>
+                </div>
+                <br>
+                <a href="{{car.get_absolute_url}}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pagination -->
+<div class="container">
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first&nbsp;</a>
+                <a href="?page={{ page_obj.prevous_page_number }}">&nbsp;previous&nbsp;</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }}&nbsp;or&nbsp;{{ page_obj.pagination.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">&nbsp;next&nbsp;</a>
+                <a href="?page={{ page_obj.pagination.num_pages }}">&nbsp;last &raquo;&nbsp;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+{% endblock %}

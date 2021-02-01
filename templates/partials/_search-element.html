@@ -1,0 +1,40 @@
+{% load static %}
+
+<!--Search Section Start-->
+<div class="main-search">
+    <form method="get" action="{% url 'filter-results' %}">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <p>Brand:</p>
+            {{ myFilter.form.brand }}
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+            <p>Category:</p>
+            {{ myFilter.form.brand }}
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <p>Year greater than:</p>
+            {{ myFilter.form.year_gt }}
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <p>Year less than:</p>
+            {{ myFilter.form.year_lt }}
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <p>Price greater than:</p>
+            {{ myFilter.form.price_gt }}
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <p>Price less than:</p>
+            {{ myFilter.form.price_lt }}
+        </div>
+        <div class="col-lg- col-md-1 col-sm-12 col-xs-12">
+            <p>Transmission:</p>
+            {{ myFilter.form.transmission }}
+        </div>
+        <br>
+        <button type="submit" class="w3-text-black w3-margin-bottom w3-margin-top col-lg-1 col-md-1 col-sm-3 col-xs-12">
+            Search 
+        </button>
+    </form>
+</div>
+<!--Search Section End--> 

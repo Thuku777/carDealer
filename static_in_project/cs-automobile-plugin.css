@@ -887,7 +887,7 @@
 .wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .slick-prev:before, .wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .slick-next:before{color:#fff;font-family: 'icomoon';font-size:20px;line-height:30px;padding-left:5px;}
 .wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .slick-prev:before{content:"\e314"}
 .wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .slick-next:before{content:"\e315"}
-.wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .featured:after{ background: rgba(0, 0, 0, 0.75) none repeat scroll 0 0;color: #fff;content: "FEATURED";font-weight: bold;left: 26px;padding: 0px 8px;position: absolute;top: 10px;   font-size: 10px;z-index:999;}
+.wp-automobile .cs-auto-listing.cs-auto-box ul.cs-auto-box-slider .featured:after{ background: rgba(0, 0, 0, 0.75) none repeat scroll 0 0;color: #fff;font-weight: bold;left: 26px;padding: 0px 8px;position: absolute;top: 10px;   font-size: 10px;z-index:999;}
  /*index page auto new listing end*/
  /*index page Blog grid Start*/
 .wp-automobile .cs-blog.cs-blog-grid .cs-element-title{padding-bottom: 15px;text-transform:uppercase;}

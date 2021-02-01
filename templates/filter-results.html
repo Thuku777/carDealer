@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load for_pagination %}
+
+{% block content %}
+
+<div class="container-fluid" style="background-color: beige;"> 
+	<!--Search Section Start-->
+	{% include 'partials/_search-element.html' %}
+	<!--Search Section End--> 
+</div>
+
+<!--tabs section-->
+<div class="page-section" style="padding-top:70px; padding-bottom:65px;">
+	<div class="container">
+		<div class="row">
+			<div class="section-fullwidth col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 co-sm-12 col-xs-12">
+					
+						<!--Tabs Start-->
+						
+						<div class="cs-tabs full-width">
+							<div class="tab-content">
+								<div id="home" class="tab-pane fade in active">
+									<div class="row">
+										{% for car in all %}
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="auto-listing auto-grid">
+												<div class="cs-media">
+													<figure> <img src="{{ car.image_main.url }}" alt="#"/>
+													</figure>
+												</div>
+												<div class="auto-text"> <span class="cs-categories"><a href="#">{{ car.category }}</a></span>
+													<div class="post-title">
+														<h6><a href="{{car.get_absolute_url}}#">{{car.brand}}</a></h6>
+														<div class="auto-price"><span class="cs-color">Price: ${{ car.price }}</span></div>
+													</div>
+													<div class="cs-checkbox">
+														<div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:15px"> {{car.transmission}} </i> 
+															&nbsp;&nbsp;&nbsp;&nbsp;<i>Year: {{car.year}}</i>
+														</div>
+													</div>
+													<br>
+													<a href="{{car.get_absolute_url}}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Tabs End--> 
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--tabs section--> 
+
+	<!-- Pagination -->
+	<div class="container-fluid">
+		{% include 'partials/_pagination.html' %}
+	</div>
+	
+</div>
+{% endblock %}

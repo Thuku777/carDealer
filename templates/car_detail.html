@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row" style="background-color: beige;">
+    <br><br>
+    <div class="col-sm-6 col-md-6 col-lg-5">
+    {% if cars.image_main %}
+        <h3><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{cars.brand}}</strong></h3>
+        <figure> <img src="{{ cars.image_main.url }}" alt="#"/></figure>
+    {% endif %}
+    {% if cars.image1%}
+        <figure> <img src="{{ cars.image1.url }}" alt="#"/></figure>
+    {% endif %}
+    {% if cars.image2%}
+        <figure> <img src="{{ cars.image2.url }}" alt="#"/></figure>
+    {% endif %}
+    {% if cars.image3%}
+        <figure> <img src="{{ cars.image3.url }}" alt="#"/></figure>
+    {% endif %}
+    {% if cars.image4%}
+        <figure> <img src="{{ cars.image4.url }}" alt="#"/></figure>
+    {% endif %}
+    {% if cars.image5%}
+        <figure> <img src="{{ cars.image5.url }}" alt="#"/></figure>
+    {% endif %}
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-5">
+        <div>
+            <p><strong>Dealer :</strong> {{cars.dealer}}</p>
+            <p><strong>Category :</strong> {{cars.category}}</p>
+            <p><strong>Mileage :</strong> {{cars.miles}}</p>
+            <p><strong>Year :</strong> {{cars.year}}</p>
+            <p><strong>Transmission :</strong> {{cars.transmission}}</p>
+            <p><strong>Power :</strong> {{cars.power}}</p>
+            <p><strong>Description :</strong> {{cars.description}}</p>
+            <p><strong>Fuel Tank :</strong> {{cars.fuel_tank}} Litres</p>
+            <p><strong>Price :</strong> {{cars.price}} $</p>
+        </div>
+    </div>
+    <br><br>
+</div>
+{% endblock %}

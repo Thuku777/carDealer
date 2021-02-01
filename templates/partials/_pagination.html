@@ -1,0 +1,21 @@
+{% load static %}
+{% load for_pagination %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="{% fixed_pn 1 'page' request.GET.urlencode %}">&laquo; first &nbsp;</a>
+            <a href="{% fixed_pn page_obj.previous_page_number 'page' request.GET.urlencode %}">&nbsp; previous &nbsp;</a>
+        {% endif %}
+        
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="{% fixed_pn page_obj.next_page_number 'page' request.GET.urlencode %}">&nbsp; next &nbsp;</a>
+            <a href="{% fixed_pn page_obj.paginator.num_pages 'page' request.GET.urlencode %}">&nbsp; last &raquo; &nbsp;</a>
+        {% endif %}
+    </span>
+</div>
+
